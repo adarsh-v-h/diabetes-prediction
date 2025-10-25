@@ -57,49 +57,51 @@ classifier.fit(X_train, Y_train)
 # optimal hyperplan: the one that has the largest margin—the greatest distance to the nearest training data point of any class.
 # The SVM algorithm doesn't use all the training data to define this boundary. Instead, it relies on a small subset of critical data points: the Support Vectors.
 # It Stores the Hyperplane Parameters: It calculates and stores the mathematical definition of the hyperplane itself (its weight vector and bias term).
+def main():
+    print(f"Model training is over \n checking model accuracy")
+    X_test_prediction = classifier.predict(X_test)
+    # When you later call classifier.predict(X_test), the model takes a new data point from X_text and determines which side of the learned hyperplane it falls on
+    accuracy = accuracy_score(X_test_prediction, Y_test) # this will find out the accuracy score by comparing the predicted data with labelled data 
+    print(f"The accuracy score is: {accuracy}")
+    while True:
+        Ch = input(f"\n Do you have any personal data to test? (y/n)").lower().strip()
+        if Ch == 'n':
+            print("Tanks for watching")
+            break
+        elif Ch == 'y':
+            print(f" \t The is a basic accuray test for the model \t")
+            data = []
+            num = int(input("Enter the number of times you got pregnant: "))
+            data.append(num)
+            num = int(input("Enter the amount of Glucose in your blood: "))
+            data.append(num)
+            num = int(input("Enter you blood pressure: "))
+            data.append(num)
+            num = int(input("Enter your skin Thickness: "))
+            data.append(num)
+            num = float(input("Enter your the amount of insuline: "))
+            data.append(num)
+            num = float(input("Enter your IBM: "))
+            data.append(num)
+            num = float(input("Enter your Diabetes Pedigree Function: "))
+            data.append(num)
+            num = int(input("Enter your age: "))
+            data.append(num)
+            # now all the input data is in a list, we will convert it to an array
+            data = np.array(data)
+            # but now this is an 1D array, want an 2D 
+            data = data.reshape(1,-1)
+            # now this is an 2D array with (1,8)
 
-print(f"Model training is over \n checking model accuracy")
-X_test_prediction = classifier.predict(X_test)
-# When you later call classifier.predict(X_test), the model takes a new data point from X_text and determines which side of the learned hyperplane it falls on
-accuracy = accuracy_score(X_test_prediction, Y_test) # this will find out the accuracy score by comparing the predicted data with labelled data 
-print(f"The accuracy score is: {accuracy}")
-while True:
-    Ch = input(f"\n Do you have any personal data to test? (y/n)").lower().strip()
-    if Ch == 'n':
-        print("Tanks for watching")
-        break
-    elif Ch == 'y':
-        print(f" \t The is a basic accuray test for the model \t")
-        data = []
-        num = int(input("Enter the number of times you got pregnant: "))
-        data.append(num)
-        num = int(input("Enter the amount of Glucose in your blood: "))
-        data.append(num)
-        num = int(input("Enter you blood pressure: "))
-        data.append(num)
-        num = int(input("Enter your skin Thickness: "))
-        data.append(num)
-        num = float(input("Enter your the amount of insuline: "))
-        data.append(num)
-        num = float(input("Enter your IBM: "))
-        data.append(num)
-        num = float(input("Enter your Diabetes Pedigree Function: "))
-        data.append(num)
-        num = int(input("Enter your age: "))
-        data.append(num)
-        # now all the input data is in a list, we will convert it to an array
-        data = np.array(data)
-        # but now this is an 1D array, want an 2D 
-        data = data.reshape(1,-1)
-        # now this is an 2D array with (1,8)
-
-        #Now we have to standardise the data
-        data = scaler.transform(data)
-        # since this is same as the range, X had so we wont need to do fit again
-        prediction = classifier.predict(data)
-        if prediction[0] ==1:
-            print("Congratulation you have diabetes")
-        elif prediction[0] == 1:
-            print("Congratulations you dont have diabetes")
-    else:
-        print("Nigga you fumbled yes or no question ??😭😭")
+            #Now we have to standardise the data
+            data = scaler.transform(data)
+            # since this is same as the range, X had so we wont need to do fit again
+            prediction = classifier.predict(data)
+            if prediction[0] ==1:
+                print("Congratulation you have diabetes")
+            elif prediction[0] == 1:
+                print("Congratulations you dont have diabetes")
+        else:
+            print("Nigga you fumbled yes or no question ??😭😭")
+if __name__ == "__main__":
+    main()
