@@ -8,7 +8,7 @@ This asks basics questions about you from age, blood pressure.. etc, and tries t
 
 ## 📊 Dataset
 The dataset for this project is avaiable on **kaggle** and **huggingface**. <br>
-You can download them directly from: [HuggingFace Dataset](https://huggingface.co/datasets/TahaGorji/DiabetesDeepInsight-CSV/resolve/main/diabetes.csv?download=true) <br
+You can download them directly from: [HuggingFace Dataset](https://huggingface.co/datasets/TahaGorji/DiabetesDeepInsight-CSV/resolve/main/diabetes.csv?download=true) <br>
 You can download it automatically by running: <br>
 ```bash
 curl  -L -o main/diabetes.csv https://huggingface.co/datasets/TahaGorji/DiabetesDeepInsight-CSV/resolve/main/diabetes.csv
