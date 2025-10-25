@@ -12,7 +12,7 @@ You can download them directly from: [HuggingFace Dataset](https://huggingface.c
 You can download it automatically by running: <br>
 ```bash
 curl  -L -o main/diabetes.csv https://huggingface.co/datasets/TahaGorji/DiabetesDeepInsight-CSV/resolve/main/diabetes.csv
-
+```
 ---
 
 ## 🧠 Tech Stack
@@ -26,7 +26,7 @@ git clone https://github.com/adarsh-v-h/diabetes-prediction.git <br>
 cd diabetes-prediction <br>
 pip install -r requirements.txt <br>
 python main/main.py <br>
-
+```
 ---
 
 ## 📈 Result
