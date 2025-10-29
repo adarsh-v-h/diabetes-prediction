@@ -21,6 +21,7 @@ Python • Sklearn • Numpy • Pandas
 ---
 
 ## 🚀 Getting started
+Run these commands on Terminal: <br>
 ```bash
 git clone https://github.com/adarsh-v-h/diabetes-prediction.git 
 cd diabetes-prediction 
