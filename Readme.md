@@ -28,7 +28,18 @@ cd diabetes-prediction
 pip install -r requirements.txt 
 python main/main.py 
 ```
-
+But its good to create a separate environment before doing that, we can create that by running:
+```bash
+python -m venv .venv
+```
+Then to run it:
+```bash
+\\.venv\\Scripts\\activate
+```
+But if you are on linux:
+```bash
+source .venv/bin/activate
+```
 ---
 
 ## 📈 Result
