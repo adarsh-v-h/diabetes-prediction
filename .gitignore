@@ -9,7 +9,7 @@ __pycache__/
 *.pyo
 *.pyd
 *.zip
-*.csv
+# *.csv
 # Ignore Jupyter checkpoints
 .ipynb_checkpoints/
 # Ignore OS stuff
